@@ -1,11 +1,4 @@
 public class day1_input {
-    static String smallSamples =
-            "3   4\n" +
-            "4   3\n" +
-            "2   5\n" +
-            "1   3\n" +
-            "3   9\n" +
-            "3   3";
     static String samples =
             "40094   37480\n" +
             "52117   14510\n" +
