@@ -12,15 +12,14 @@ public class day2_main {
 
         //Part 1+2
         IntStream.range(0,rows.size()).forEach(i-> {
-            int[] currentRow= Arrays.stream(rows.get(i).split(" ")).mapToInt(Integer::parseInt).toArray();
-            List <Integer> currentRowList =Arrays.stream(currentRow).boxed().toList();
+            List<Integer> currentRow= Arrays.stream(rows.get(i).split(" ")).mapToInt(Integer::parseInt).boxed().toList();
 
-            if (checkForValid(currentRowList)) {
+            if (checkForValid(currentRow)) {
                 validLevels++;
             } else {
-                if (IntStream.range(0,currentRow.length).anyMatch(inx-> {
+                if (IntStream.range(0,currentRow.size()).anyMatch(inx-> {
 
-                    List<Integer> modified = new ArrayList<>(currentRowList);
+                    List<Integer> modified = new ArrayList<>(currentRow);
                     modified.remove(inx);
 
                     return checkForValid(modified);
